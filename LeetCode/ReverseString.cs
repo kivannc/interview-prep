@@ -9,7 +9,7 @@
         */
         public static void ReverseStringMethod(char[] s)
         {
-            int index1 = 0;
+            var index1 = 0;
             var index2 = s.Length-1;
 
             while (index1 < index2)
