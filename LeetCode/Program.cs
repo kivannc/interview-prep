@@ -15,5 +15,11 @@ using LeetCode;
 
 //MoveZerosProblem.MoveZerosV3(new int[] {0, 1, 0, 2, 3, 4, 0, 5, 6, 7 });
 
-TwoSum2.TwoSum(new int[] { 2, 7, 11, 15 }, 9);
+//TwoSum2.TwoSum(new int[] { 2, 7, 11, 15 }, 9);
+
+ReverseString.ReverseStringMethod(new char[] { 'h', 'e', 'l', 'l', 'o', 'm' });
+ReverseString.ReverseStringMethod(new char[] { 'h', 'e', 'l', 'l', 'o', 'm' });
+ReverseString.ReverseStringMethod(new char[] { 'm' });
+ReverseString.ReverseStringMethod(new char[] { });
+
 Console.ReadKey();
