@@ -3,7 +3,6 @@
     public static class ReverseString
     {
         /*
-         * 
          * Runtime: 200 ms, faster than 99.60% of C# online submissions for Reverse String.
          * Memory Usage: 47.1 MB, less than 52.66% of C# online submissions for Reverse String.
         */
