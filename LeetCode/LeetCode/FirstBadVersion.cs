@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace InterviewPrep.LeetCode
 {
     public class VersionControl
     {
@@ -24,9 +24,9 @@ namespace LeetCode
             {
                 long mid = (min + max) / 2;
 
-                if (IsBadVersion((int)mid) && !IsBadVersion((int)mid -1))
+                if (IsBadVersion((int)mid) && !IsBadVersion((int)mid - 1))
                 {
-                    return (int) mid;
+                    return (int)mid;
                 }
                 if (!IsBadVersion((int)mid))
                 {

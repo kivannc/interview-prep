@@ -1,22 +1,22 @@
-﻿namespace LeetCode
+﻿namespace InterviewPrep.LeetCode
 {
     public static class RotateArray
     {
         public static void Rotate(int[] nums, int k)
         {
             var arr = new int[nums.Length - k];
-            for (int i = 0; i < nums.Length-k; i++)
+            for (int i = 0; i < nums.Length - k; i++)
             {
                 arr[i] = nums[i];
             }
-            for (int i = 0;i < k; i++)
+            for (int i = 0; i < k; i++)
             {
-               nums[i] =nums[i+ nums.Length - k];
+                nums[i] = nums[i + nums.Length - k];
             }
 
-            for(int i = 0;i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                nums[i+k] = arr[i];
+                nums[i + k] = arr[i];
             }
         }
 

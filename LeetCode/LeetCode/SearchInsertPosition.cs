@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace InterviewPrep.LeetCode
 {
     public static class SearchInsertPosition
     {
@@ -14,19 +14,19 @@ namespace LeetCode
             if (target < nums[0]) return 1;
 
             long min = 0;
-            long max = nums.Length-1;
-            var direction = 0; 
+            long max = nums.Length - 1;
+            var direction = 0;
             while (min <= max)
             {
                 long mid = (min + max) / 2;
 
-                if (nums[mid] == target || (nums[mid] < target && direction == -1 ) || (nums[mid] > target && direction == 1))
+                if (nums[mid] == target || nums[mid] < target && direction == -1 || nums[mid] > target && direction == 1)
                 {
-                    return (int)mid+1;
+                    return (int)mid + 1;
                 }
-                if (nums[mid]< target)
+                if (nums[mid] < target)
                 {
-                    direction= 1;
+                    direction = 1;
                     min = mid + 1;
                 }
                 else

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace InterviewPrep.LeetCode
 {
     public static class TwoSum2
     {
@@ -14,17 +14,17 @@ namespace LeetCode
             int index1 = 0;
             var index2 = numbers.Length - 1;
 
-            while(index1 <= index2)
+            while (index1 <= index2)
             {
                 if (index1 == index2) break;
                 int sum = numbers[index1] + numbers[index2];
-                if ( sum == target)
+                if (sum == target)
                 {
-                    result[0] = index1+1;
-                    result[1] = index2+1;
+                    result[0] = index1 + 1;
+                    result[1] = index2 + 1;
                     break;
                 }
-                else if ( sum < target)
+                else if (sum < target)
                 {
                     index1++;
                 }

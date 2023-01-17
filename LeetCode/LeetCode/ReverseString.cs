@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace InterviewPrep.LeetCode
 {
     public static class ReverseString
     {
@@ -9,7 +9,7 @@
         public static void ReverseStringMethod(char[] s)
         {
             var index1 = 0;
-            var index2 = s.Length-1;
+            var index2 = s.Length - 1;
 
             while (index1 < index2)
             {

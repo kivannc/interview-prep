@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace InterviewPrep.LeetCode
 {
     public static class SquaresOfASortedArray
     {

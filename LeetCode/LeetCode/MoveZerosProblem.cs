@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace InterviewPrep.LeetCode
 {
     public static class MoveZerosProblem
     {
@@ -88,7 +88,7 @@
 
                 nums[nonZeroIndex++] = nums[i];
             }
-            for (int i= nonZeroIndex; i < nums.Length; i++)
+            for (int i = nonZeroIndex; i < nums.Length; i++)
             {
                 nums[i] = 0;
             }

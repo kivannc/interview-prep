@@ -1,25 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using LeetCode;
-
-//Console.WriteLine("Hello, World!");
-
-//var Solution = new FidnBadVersion();
-//var badVersion = Solution.FirstBadVersion(2126753390);
 
 
-//var index = SearchInsertPosition.SearchInsert(new int[] { 1,3,4,5,6,7,9 }, 8);
+using InterviewPrep.HackerRank;
 
-//var result = SquaresOfASortedArray.SortedSquares(new int[] { -10000, -1, 0, 3, 10000 });
-
-//RotateArray.Rotate(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 3);
-
-//MoveZerosProblem.MoveZerosV3(new int[] {0, 1, 0, 2, 3, 4, 0, 5, 6, 7 });
-
-//TwoSum2.TwoSum(new int[] { 2, 7, 11, 15 }, 9);
-
-ReverseString.ReverseStringMethod(new char[] { 'h', 'e', 'l', 'l', 'o', 'm' });
-ReverseString.ReverseStringMethod(new char[] { 'h', 'e', 'l', 'l', 'o', 'm' });
-ReverseString.ReverseStringMethod(new char[] { 'm' });
-ReverseString.ReverseStringMethod(new char[] { });
-
+Questions.ClimbingLeaderboard(new List<int> { 100, 100, 50, 40, 40, 20, 10 }, new List<int> { 5, 25, 50, 120 })
+    .ForEach(i => Console.Write("{0} ", i));
+Console.WriteLine("\n");
+Questions.ClimbingLeaderboard(new List<int> { 100, 90, 90, 80, 75, 60 }, new List<int> { 50, 65, 77, 90, 90, 90 })
+    .ForEach(i => Console.Write("{0} ", i));
+Console.WriteLine("\n");
+Questions.ClimbingLeaderboard(new List<int> { 100, 100, 90, 90, 80, 80, 70, 60, 60, 50 }, new List<int> { 45, 50, 75, 80, 102, 105, 120 })
+    .ForEach(i => Console.Write("{0} ", i));
+Console.WriteLine("\n");
 Console.ReadKey();
