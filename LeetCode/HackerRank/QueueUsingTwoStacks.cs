@@ -31,37 +31,43 @@
 
     public class Queue<T>
     {
-        private readonly Stack<T> _stack1;
-        private readonly Stack<T> _stack2;
-        public Queue()
-        {
-            _stack1 = new Stack<T>();
-            _stack2 = new Stack<T>();
-        }
 
-        public void Enqueue (T item)
-        {
-            foreach (var x1 in _stack1)
-            {
-                _stack2.Push(x1);
-            }
-            _stack2.Push(item);
+        private readonly Stack<T> _stack1 = new Stack<T>();
+        private readonly Stack<T> _stack2 = new Stack<T>();
 
-            foreach (var x1 in _stack2)
-            {
-                _stack1.Push(x1);
-            }
+
+        //implement Enqueue with two stacks 
+        public void Enqueue(T item)
+        {
+            _stack1.Push(item);
         }
 
         public void Dequeue()
         {
-            _stack1.Pop();
+            if (_stack2.Count == 0)
+            {
+                while (_stack1.Count > 0)
+                {
+                    _stack2.Push(_stack1.Pop());
+                }
+            }
+
+            _stack2.Pop();
+            
+            
         }
 
         public void PrintFirst()
         {
-            Console.WriteLine(_stack2.First());
-           
+            if (_stack2.Count == 0)
+            {
+                while (_stack1.Count > 0)
+                {
+                    _stack2.Push(_stack1.Pop());
+                }
+            }
+
+            Console.WriteLine(_stack2.Peek());
         }
     }
 }
