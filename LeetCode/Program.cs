@@ -3,8 +3,8 @@
 
 using InterviewPrep.HackerRank;
 
-Console.WriteLine(Questions.IsBalanced("{[()]}"));
-Console.WriteLine(Questions.IsBalanced("{[()]}}}"));
-Console.WriteLine(Questions.IsBalanced("{[)(]}"));
-Console.WriteLine(Questions.IsBalanced("{"));
+var primes = Questions.GetNthPrimeNumber(1200);
+Console.WriteLine(primes.Last());
+
+var answers = Questions.Waiter(new List<int> { 2, 3, 4, 5, 6, 7 }, 3);
 Console.ReadKey();
