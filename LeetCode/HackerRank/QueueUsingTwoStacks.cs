@@ -4,7 +4,7 @@
     {
         public static void RunQueries()
         {
-            var queue = new Queue<int>();
+            var queue = new MyQueue<int>();
             var numberOfQueries = Convert.ToInt32(Console.ReadLine());
             while (numberOfQueries > 0)
             {
@@ -29,7 +29,7 @@
         }
     }
 
-    public class Queue<T>
+    public class MyQueue<T>
     {
 
         private readonly Stack<T> _stack1 = new Stack<T>();
