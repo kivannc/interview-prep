@@ -1,10 +1,9 @@
 ﻿namespace InterviewPrep.HackerRank;
-
 internal partial class Questions
 {
   public static void RunQueries()
   {
-    var queue = new Queue<int>();
+    var queue = new MyQueue<int>();
     var numberOfQueries = Convert.ToInt32(Console.ReadLine());
     while (numberOfQueries > 0)
     {
@@ -29,38 +28,44 @@ internal partial class Questions
   }
 }
 
-public class Queue<T>
+public class MyQueue<T>
 {
-  private readonly Stack<T> _stack1;
-  private readonly Stack<T> _stack2;
-  public Queue()
-  {
-    _stack1 = new Stack<T>();
-    _stack2 = new Stack<T>();
-  }
 
+  private readonly Stack<T> _stack1 = new Stack<T>();
+  private readonly Stack<T> _stack2 = new Stack<T>();
+
+
+  //implement Enqueue with two stacks 
   public void Enqueue(T item)
   {
-    foreach (var x1 in _stack1)
-    {
-      _stack2.Push(x1);
-    }
-    _stack2.Push(item);
-
-    foreach (var x1 in _stack2)
-    {
-      _stack1.Push(x1);
-    }
+    _stack1.Push(item);
   }
 
   public void Dequeue()
   {
-    _stack1.Pop();
+    if (_stack2.Count == 0)
+    {
+      while (_stack1.Count > 0)
+      {
+        _stack2.Push(_stack1.Pop());
+      }
+    }
+
+    _stack2.Pop();
+
+
   }
 
   public void PrintFirst()
   {
-    Console.WriteLine(_stack2.First());
+    if (_stack2.Count == 0)
+    {
+      while (_stack1.Count > 0)
+      {
+        _stack2.Push(_stack1.Pop());
+      }
+    }
 
+    Console.WriteLine(_stack2.Peek());
   }
 }
