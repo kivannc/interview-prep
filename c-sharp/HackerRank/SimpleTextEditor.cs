@@ -31,7 +31,7 @@ internal partial class Questions
             if (inputArr[0] == "3")
             {
                 var printIndex = Convert.ToInt32(inputArr[1]);
-                Console.WriteLine(resultStr[printIndex]);
+                Console.WriteLine(resultStr[printIndex-1]);
             }
 
             if (inputArr[0] == "4")
