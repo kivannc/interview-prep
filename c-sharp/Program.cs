@@ -3,4 +3,4 @@ using InterviewPrep.HackerRank;
 using InterviewPrep.LeetCode;
 
 
-Console.WriteLine(SearchInRotatedArray.Search(new int[] { 3,1 }, 1));
+Console.WriteLine(FindPeakElementQuestion.FindPeakElement(new int[] { 8, 6, 4, 3, 16, 4 }));
