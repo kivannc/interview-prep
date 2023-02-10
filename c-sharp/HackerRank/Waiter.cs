@@ -2,69 +2,98 @@ namespace InterviewPrep.HackerRank;
 
 internal partial class Questions
 {
-  public static List<int> Waiter(List<int> number, int q)
-  {
-    var primes = GetNthPrimeNumber(q);
-    Stack<int> plates = new Stack<int>(number);
-    Stack<int> plateHolder = new Stack<int>();
-    Stack<int> answers = new Stack<int>();
-
-    for (int i = 0; i < primes.Count; i++)
+    public static List<int> Waiter(List<int> number, int q)
     {
-      while (plates.Any())
-      {
-        var plate = plates.Pop();
-        if (plate % primes[i] == 0)
-        {
-          answers.Push(plate);
-        }
-        else
-        {
-          plateHolder.Push(plate);
-        }
-      }
+        var primes = GetNthPrimeNumber(q);
+        Stack<int> initalStack = new Stack<int>(number);
+        Stack<int> pilaA = new Stack<int>();
+        Stack<int> pileB = new Stack<int>();
+        var answers = new List<int>();
 
-      while (plateHolder.Any())
-      {
-        plates.Push(plateHolder.Pop());
-      }
+        //First iteration 
+        var firstPrime = primes[0];
+        while (initalStack.Any())
+        {
+            var plate = initalStack.Pop();
+            if (plate % firstPrime == 0)
+            {
+                pileB.Push(plate);
+            }
+            else
+            {
+                pilaA.Push(plate);
+            }
+        }
+
+        while (pileB.Any())
+        {
+            answers.Add(pileB.Pop());
+        }
+
+        for (int i = 1; i < primes.Count; i++)
+        {
+            var prime = primes[i];
+            while (pilaA.Any())
+            {
+                var plate = pilaA.Pop();
+                if (plate % prime == 0)
+                {
+                    pileB.Push(plate);
+                }
+                else
+                {
+                    initalStack.Push(plate);
+                }
+            }
+
+            while (pileB.Any())
+            {
+                answers.Add(pileB.Pop());
+            }
+
+            var stack = new Stack<int>();
+            while (initalStack.Any())
+            {
+                stack.Push(initalStack.Pop());
+            }
+
+            while (stack.Any())
+            {
+                pilaA.Push(stack.Pop());
+            }
+        }
+
+        while (pilaA.Any())
+        {
+            answers.Add(pilaA.Pop());
+        }
+        return answers;
     }
-
-    if (plates.Count > 0)
+    public static List<int> GetNthPrimeNumber(int primeCount)
     {
-      while (plates.Any())
-      {
-        answers.Push(plates.Pop());
-      }
-    }
+        var primes = new List<int>();
+        var number = 2;
 
-    return plates.ToList();
-  }
-  public static List<int> GetNthPrimeNumber(int primeCount)
-  {
-    var primes = new List<int>();
-    var number = 2;
-
-    while (primeCount > 0)
-    {
-      var isPrime = true;
-      for (int i = 2; i <= Math.Sqrt(number); i++)
-      {
-        if (number % i == 0)
+        while (primeCount > 0)
         {
-          isPrime = false;
-          break;
+            var isPrime = true;
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime)
+            {
+                primes.Add(number);
+                primeCount--;
+            }
+            number++;
         }
-      }
 
-      if (isPrime)
-      {
-        primes.Add(number);
-        primeCount--;
-      }
-      number++;
+        return primes;
     }
-
-    return primes;
-  }
 }

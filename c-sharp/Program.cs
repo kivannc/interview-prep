@@ -1,19 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
-
 using InterviewPrep.HackerRank;
 
-/*
-8
-1 abc
-3 3
-2 3
-1 xy
-3 2
-4
-4
-3 1  
-*/
 
-Questions.SimpleTextEditor();
+var answers1 = Questions.Waiter(new List<int> { 2, 3, 4, 5, 6, 7 }, 3);
+var answers2 = Questions.Waiter(new List<int> { 3, 4, 7, 6, 5 }, 1);
+var answers3 = Questions.Waiter(new List<int> { 3, 4, 7, 6, 5 }, 1);
+
+Console.WriteLine(string.Join(' ', answers1));
+Console.WriteLine(string.Join(' ', answers2));
+
+
 Console.ReadKey();
