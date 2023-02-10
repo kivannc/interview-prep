@@ -2,6 +2,5 @@
 using InterviewPrep.HackerRank;
 using InterviewPrep.LeetCode;
 
-//Sqrt Example
-//Console.WriteLine(Sqrt.MySqrt(4));
-Console.WriteLine(Sqrt.MySqrt(2147395599));
+
+Console.WriteLine(SearchInRotatedArray.Search(new int[] { 3,1 }, 1));
