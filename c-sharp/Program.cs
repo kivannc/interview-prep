@@ -1,13 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using InterviewPrep.HackerRank;
 
-
-var answers1 = Questions.Waiter(new List<int> { 2, 3, 4, 5, 6, 7 }, 3);
-var answers2 = Questions.Waiter(new List<int> { 3, 4, 7, 6, 5 }, 1);
-var answers3 = Questions.Waiter(new List<int> { 3, 4, 7, 6, 5 }, 1);
-
-Console.WriteLine(string.Join(' ', answers1));
-Console.WriteLine(string.Join(' ', answers2));
+//EqualStacks 
+var h1 = new List<int> { 3, 2, 1, 1, 1 };
+var h2 = new List<int> { 4, 3, 2 };
+var h3 = new List<int> { 1, 1, 4, 1 };
+var result = Questions.EqualStacks(h1, h2, h3);
 
 
 Console.ReadKey();
